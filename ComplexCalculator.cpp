@@ -12,7 +12,7 @@ bool valid_compelx_number (string& str){
     return regex_match(str, valid_complex);
 }
 
-//  gettign the real && imaginary part of the complex number.
+//  getting the real && imaginary part of the complex number.
 void parse_complex(string str, double& real, double& img){
     int pos = str.find_last_of('+');
     if(pos == -1){
