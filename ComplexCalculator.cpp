@@ -10,28 +10,16 @@ bool valid_compelx_number (string& str){
     return regex_match(str, valid_complex);
 }
 
-void parse_complex1(string str, double& f_real, double& f_img){
+void parse_complex(string str, double& real, double& img){
     int pos = str.find_last_of('+');
     if(pos == -1){
         pos = str.find_last_of('-');
     }
     string real_str = str.substr(1, pos - 1);
-    f_real = stod(real_str);
+    real = stod(real_str);
     int len_img_str = str.size() - real_str.size()- 2 - 1;
     string img_str = str.substr(pos, len_img_str);
-    f_img = stod(img_str);
-}
-
-void parse_complex2(string str, double& s_real, double& s_img){
-    int pos = str.find_last_of('+');
-    if(pos == -1){
-        pos = str.find_last_of('-');
-    }
-    string real_str = str.substr(1, pos - 1);
-    s_real = stod(real_str);
-    int len_img_str = str.size() - real_str.size()- 2 - 1;
-    string img_str = str.substr(pos, len_img_str);
-    s_img = stod(img_str);
+    img = stod(img_str);
 }
 
 void calc(char op, complex <double> f_complex, complex <double> s_complex, complex <double> result){
@@ -64,9 +52,8 @@ int main() {
             continue;
         }
         double f_real, f_img, s_real, s_img; 
-        parse_complex1(num1, f_real, f_img);
-        parse_complex2(num2, s_real, s_img);
-
+        parse_complex(num1, f_real, f_img);
+        parse_complex(num2, s_real, s_img);
         complex <double> f_complex(f_real, f_img);
         complex <double> s_complex(s_real, s_img);
         complex <double> result(0, 0);
