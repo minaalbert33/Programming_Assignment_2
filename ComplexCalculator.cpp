@@ -1,15 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  check if the operator is valid or not.
 bool valid_operator(char op){
     return op != '*' && op != '-' && op != '+' && op != '/';        
 }
 
+//  check if the complex number is valid or not. 
 bool valid_compelx_number (string& str){
     regex valid_complex("[(](-)*+[0-9]+(\\.[0-9]*)?[-+][0-9]+(\\.[0-9]*)?[i][)]");       
     return regex_match(str, valid_complex);
 }
 
+//  gettign the real && imaginary part of the complex number.
 void parse_complex(string str, double& real, double& img){
     int pos = str.find_last_of('+');
     if(pos == -1){
@@ -22,6 +25,7 @@ void parse_complex(string str, double& real, double& img){
     img = stod(img_str);
 }
 
+// Perform operations on the complex numbers.
 void calc(char op, complex <double> f_complex, complex <double> s_complex, complex <double> result){
     if(op == '+')
         result = f_complex + s_complex;
