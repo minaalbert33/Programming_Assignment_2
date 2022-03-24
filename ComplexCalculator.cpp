@@ -1,69 +1,76 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define P(x)				cout<<#x<<" = { "<<x<<" }\n"
+
 bool valid_operator(char op){
-    return op != '*' && op != '-' && op != '+' && op != '/';
+    return op != '*' && op != '-' && op != '+' && op != '/';        
 }
 
 bool valid_compelx_number (string& str){
-    regex valid_complex("[(][0-9]+(\\.[0-9]*)?[-+][0-9]+(\\.[0-9]*)?[i][)]");
+    regex valid_complex("[(](-)*+[0-9]+(\\.[0-9]*)?[-+][0-9]+(\\.[0-9]*)?[i][)]");       
     return regex_match(str, valid_complex);
 }
 
-double parse_complex(string str, int type){
-    int pos = str.find('+');
+void parse_complex1(string str, double& f_real, double& f_img){
+    int pos = str.find_last_of('+');
     if(pos == -1){
-        pos = str.find('-');
+        pos = str.find_last_of('-');
     }
-
     string real_str = str.substr(1, pos - 1);
+    f_real = stod(real_str);
     int len_img_str = str.size() - real_str.size()- 2 - 1;
     string img_str = str.substr(pos, len_img_str);
-    double res;
-
-    if (type == 1)
-        res = stof(real_str);
-    else if (type == 2)
-        res = stof(img_str);
-
-    return res;
+    f_img = stod(img_str);
 }
 
-
-void calc(char op, string& num1, string& num2){
-    string res;
-    double real_num1 = parse_complex(num1, 1);
-    double img_num1 = parse_complex(num1, 2);
-    double real_num2 = parse_complex(num2, 1);
-    double img_num2 = parse_complex(num2, 2);
-
-
-    if(op == '+'){
-        if (img_num1 + img_num2 >= 0)
-            res = '(' + to_string(real_num1 + real_num2) + " + " + to_string(img_num1 + img_num2) + 'i' + ')';
-        else
-            res = '(' + to_string(real_num1 + real_num2) + "  "+ to_string(img_num1 + img_num2) + 'i' + ')';
+void parse_complex2(string str, double& s_real, double& s_img){
+    int pos = str.find_last_of('+');
+    if(pos == -1){
+        pos = str.find_last_of('-');
     }
-
-    cout << res << endl;
+    string real_str = str.substr(1, pos - 1);
+    s_real = stod(real_str);
+    int len_img_str = str.size() - real_str.size()- 2 - 1;
+    string img_str = str.substr(pos, len_img_str);
+    s_img = stod(img_str);
 }
+
+void calc(char op, complex <double> f_complex, complex <double> s_complex, complex <double> result){
+    if(op == '+')
+        result = f_complex + s_complex;
+    else if (op == '-')
+        result = f_complex - s_complex;
+    else if (op == '*')
+        result = f_complex * s_complex;
+    else
+        result = f_complex / s_complex;
+    cout << "Result: "<< '(' << real(result) <<' ' << showpos << imag(result) << 'i' << ')' << endl;
+}
+
 int main() {
     while(true){
-        cout << "Please Enter two numbers and operator or 0 to exit" << endl;
         char op;
         string num1, num2;
-        cin >> num1 >> num2 >> op;
+        cout << "Enter 0 to exit." << endl;
+        cout << "Enter the first complex number, please: ";
+        cin >> num1;
         if(num1 == "0")
             break;
+        cout << "Enter the second complex number, please: ";
+        cin >> num2;
+        cout << "Enter the operator, please --> (* or / or - or +):";
+        cin >> op;
         if(!valid_compelx_number(num1) || !valid_compelx_number(num2) || valid_operator(op)){
             cout << "Not valid format, please try again" << endl;
             continue;
         }
+        double f_real, f_img, s_real, s_img; 
+        parse_complex1(num1, f_real, f_img);
+        parse_complex2(num2, s_real, s_img);
 
-        if(num1[1] != '-'){
-            calc(op, num1, num2);
-        }
+        complex <double> f_complex(f_real, f_img);
+        complex <double> s_complex(s_real, s_img);
+        complex <double> result(0, 0);
+        calc(op, f_complex, s_complex, result);
     }
-
     return 0;
 }
