@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <regex>
+#include <complex>
 using namespace std;
 
 //  check if the operator is valid or not.
@@ -8,7 +12,7 @@ bool valid_operator(char op){
 
 //  check if the complex number is valid or not. 
 bool valid_compelx_number (string& str){
-    regex valid_complex("[(](-)*+[0-9]+(\\.[0-9]*)?[-+][0-9]+(\\.[0-9]*)?[i][)]");       
+    regex valid_complex("[(][-+]*+[0-9]+(\\.[0-9]*)?[-+][0-9]+(\\.[0-9]*)?[i][)]");       
     return regex_match(str, valid_complex);
 }
 
@@ -35,7 +39,8 @@ void calc(char op, complex <double> f_complex, complex <double> s_complex, compl
         result = f_complex * s_complex;
     else
         result = f_complex / s_complex;
-    cout << "Result: "<< '(' << real(result) <<' ' << showpos << imag(result) << 'i' << ')' << endl;
+    cout << "Result: "<< '(' << real(result) <<' ';
+    cout <<  showpos << imag(result) << 'i' << ')' << endl;
 }
 
 int main() {
