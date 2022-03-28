@@ -1,3 +1,10 @@
+/* Author : Mina Albert Saeed
+ * Course : CS 112
+ * Instructor: Dr. Mohammad El-Ramly
+ * Assignment : Assignment 2 – Version 5.0
+ *
+ * */
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -6,14 +13,16 @@ string morseToChar(string);
 
 int main(){
     while(true){
-        int user_choice;
+        int userChoice;
         string input;
         string output = "";
         int node = 0;
         string sub;
+        cout << "Ahlan ya user ya habibi.\nWhat do you like to do today?" << endl;
         cout << "1)--> Cipher\n2)--> Decipher\n3)-->Exit " << endl;
-        cin >> user_choice;
-        if(user_choice == 1){
+        cin >> userChoice;
+        if(userChoice == 1){
+            cout << "Enter a message to cipher: ";
             getline(cin >> ws, input);
             for(int i = 0; i < input.length(); i++){
                 if(i>=0){
@@ -22,7 +31,9 @@ int main(){
                 output+=" ";
             }
             cout << ' ';
-        }else if (user_choice == 2){
+        }else if (userChoice == 2){
+            
+            cout << "Enter a message to decipher: ";
             getline(cin >> ws, input);
             for(int i = 0; i <= input.length(); i++){
                 if(input[i]==' '){
@@ -45,58 +56,58 @@ int main(){
     }
 }
 
-string morseToChar(string morsecode){
-        if(morsecode == ".-")
+string morseToChar(string morseCode){
+        if(morseCode == ".-")
         {return "a";}
-        else if(morsecode == "-...")
+        else if(morseCode == "-...")
         {return "b";}
-        else if(morsecode == "-.-.")
+        else if(morseCode == "-.-.")
         {return "c";}
-        else if(morsecode == "-..")
+        else if(morseCode == "-..")
         {return "d";}
-        else if(morsecode == ".")
+        else if(morseCode == ".")
         {return "e";}
-        else if(morsecode == "..-.")
+        else if(morseCode == "..-.")
         {return "f";}
-        else if(morsecode == "--.")
+        else if(morseCode == "--.")
         {return "g";}
-        else if(morsecode == "....")
+        else if(morseCode == "....")
         {return "h";}
-        else if(morsecode == "..")
+        else if(morseCode == "..")
         {return "i";}
-        else if(morsecode == ".---")
+        else if(morseCode == ".---")
         {return "j";}
-        else if(morsecode == "-.-")
+        else if(morseCode == "-.-")
         {return "k";}
-        else if(morsecode == ".-..")
+        else if(morseCode == ".-..")
         {return "l";}
-        else if(morsecode == "--")
+        else if(morseCode == "--")
         {return "m";}
-        else if(morsecode == "-.")
+        else if(morseCode == "-.")
         {return "n";}
-        else if(morsecode == "---")
+        else if(morseCode == "---")
         {return "o";}
-        else if(morsecode == ".--.")
+        else if(morseCode == ".--.")
         {return "p";}
-        else if(morsecode == "--.-")
+        else if(morseCode == "--.-")
         {return "q";}
-        else if(morsecode == ".-.")
+        else if(morseCode == ".-.")
         {return "r";}
-        else if(morsecode == "...")
+        else if(morseCode == "...")
         {return "s";}
-        else if(morsecode == "-")
+        else if(morseCode == "-")
         {return "t";}
-        else if(morsecode == "..-")
+        else if(morseCode == "..-")
         {return "u";}
-        else if(morsecode == "...-")
+        else if(morseCode == "...-")
         {return "v";}
-        else if(morsecode == ".--")
+        else if(morseCode == ".--")
         {return "w";}
-        else if(morsecode == "-..-")
+        else if(morseCode == "-..-")
         {return "x";}
-        else if(morsecode == "-.--")
+        else if(morseCode == "-.--")
         {return "y";}
-        else if(morsecode == "--..")
+        else if(morseCode == "--..")
         {return "z";}
         else{return " ";}
 }
