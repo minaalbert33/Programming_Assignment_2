@@ -1,0 +1,105 @@
+
+	set character letter = ':'
+	string test
+	while (letter < 65 or letter > 122)       
+		display "Enter the secret letter:
+		input ( test)
+		if (test length = 1)        
+			letter = test[0]
+		
+	
+	return int(letter)        
+
+
+define cipher      
+
+	int secret = secretLetter       
+	string ciphered = "", message
+	display "Enter the message you want to cipher: 
+	input( message);        
+	
+	for (int i = 0  i < message length i++)    
+		ciphered += char((secret ^ int(message[i])) + 96) 
+														    
+	display "Ciphered text: " << ciphered << "  (Hexa "   
+
+	for (int i = 0; i < message.length(); i++)   
+		display hex  (secret ^ int(message[i])) + 96  
+	
+	
+
+define decipher              
+
+	int secret = secretLetter
+	string deciphered = "", text;
+	display "Enter the text you want to decipher: 
+	input( text)      
+
+	for (int i = 0; i < text.length(); i++) 
+		deciphered + character( (int(text[i]) - 96) ^ secret )   
+	
+	display "Deciphered text: "  deciphered " in a new line
+
+
+define decipher hex				
+	int secret = secretLetter(), hex
+	string deciphered = "", text, sub
+	display "Enter the hexadecimal you want to decipher: "
+	input ( text)				
+
+	for (int i = 0; i < text.length(); i += 2) 
+		sub = text.substr(i, 2)     
+		hex = stoi(sub, 0, 16)       
+		deciphered += char( (hex - 96) ^ secret ) 
+	
+	display"Deciphered text: "  deciphered << in a new line
+
+
+
+define main 
+
+	int process = 0
+	while (process not equal 3) 
+		display "Please enter the number of what you want to do\n"
+		display"1- Cipher a message\n"
+		display "2- Decipher a message\n"
+		display "3- End\n"
+		input process     
+		cin.ignore(numeric_limits<streamsize>::max(), '\n')
+		
+		if (input fail)       
+			cin.clear()        
+			cin.ignore(numeric_limits<streamsize>::max(), '\n')
+			continue               
+		
+		
+		
+		switch (process) 
+		case 1:                                 
+			 call cipher                          
+			stop
+		
+		case 2:                    
+			int x = 0;
+			while (x < 1 or x > 2) 
+				display "Enter the number of what you want to do\n";    
+				display "1- Decipher text\n";
+				display "2- Decipher hexa\n";
+				input x;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+				if (cin.fail()) {            
+					cin.clear();              
+					cin.ignore(numeric_limits<streamsize>::max(), '\n')
+				
+			
+
+			switch (x) 
+			case 1:         
+				call decipher()   
+				stop
+			case 2:          
+				call decipher_hex   
+				stop
+			case 3:
+				
