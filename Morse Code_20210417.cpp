@@ -25,9 +25,7 @@ int main(){
             cout << "Enter a message to cipher: ";
             getline(cin >> ws, input);
             for(int i = 0; i < input.length(); i++){
-                if(i>=0){
                     output +=  charToMorse(input[i]);
-                }
                 output+=" ";
             }
             cout << ' ';
