@@ -1,0 +1,8 @@
+-I created calculate_tax function that takes num and precetage paramets and return tax
+-and main calculator that takes hours and dependents (Check if greater than or equal 3)
+- Then calculate all taxes
+	-social_security_tax
+	-social_security_tax
+	-state_income_tax
+then calculate total_tax and gross_pay_after_taxes
+and print them
