@@ -1,0 +1,21 @@
+main function ask you to Cipher a message or deCipher a message
+
+then take choice as input
+and check equal 1 or 2 or 3
+1 --> to cipher a message
+	By validate shift
+		and encrypt
+Encrypt function
+- declaring answer = ""
+- for loop on string size
+- check if char is upper or no
+- get every char ascii code
+- then shift every charcter by increasing by 65
+
+
+validate function
+- by mod shift 26
+- check less than 0, so increment by 26
+
+deEncrypt function
+- Same as Encrypt function but minus 65 other than increasing

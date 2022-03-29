@@ -1,0 +1,22 @@
+
+  set variable basefare = 3.20 
+  set variable  fare/km =2.05
+  set variable  fare/min =0.95
+  set float x
+  set float y
+  set integer z
+  display"note:there is an extra 15% charge from 11pm till 6am"        
+  display"enter the journey start time in 24-hours format ex:(6 pm is 1800,6 am is 0600) :"
+  input z                                                                                   
+  display "enter the journey duration in minutes 
+  input x                                                                                   
+  display"enter the journey distance in kilo meters
+  input y                                                                                   
+  if (z<2300&&z>600)                                                                    
+  
+  display "your ride fare is :"(basefare+(x*fare/min)+(y*fare/km))" $"      
+ 
+  else
+
+  display"your ride fare is :"<<(basefare+(x*fare/min)+(y*fare/km))*0.15+(basefare+(x*fare/min)+(y*fare/km))<<" $" 
+  

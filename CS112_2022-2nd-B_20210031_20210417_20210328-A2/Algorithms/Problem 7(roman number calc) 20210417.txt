@@ -1,0 +1,5 @@
+1- make function that check if the roman number is valid or not by regex library.
+2- make function that convert every roman number to its equivalent in Arabic numbers
+3- get the input from user and check if it's valid or not.
+4- loop on the string from the end and pass every char to the (2) function.
+5- output the Arabic number.

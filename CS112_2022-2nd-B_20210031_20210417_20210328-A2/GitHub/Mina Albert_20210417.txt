@@ -1,0 +1,24 @@
+To understand how Git works with its local and remote repositories, this article explains to you Git basic workflow, which involves some basic operations such as
+
+-- Add Operation
+-- Commit Operation
+-- Pull Operation
+-- Push Operation
+
+1- Git Add operation involves adding a new file to the staging area before doing any commits, so here am using my default text editor to create a text file.
+
+2- Git Commit operation involves saving changes to the local repository, the important thing you have to note that, you have to explicitly tell Git which changes you wanted to include in a commit message before running a commit command.
+   commit command is git commit -m <values for m> 
+   Here we have a default editor so we can commit without specifying the parameters.
+   Hence the default editor will show up for the commit message.
+   I am committing my message in the default editor page as My First Commit! and then save and exit.
+Git will use same commit message whatever we entered in the editor as our commit message.
+
+3-Git Pull Operation involves updating the local version of a repository from a remote repository. git pull includes two commands such as git fetch and git merge.
+Git pull first runs fetch command and downloads the content from the specified remote repository and then git merge command executed to merge the remote content references and heads into a local merge commit git pull origin master
+The above command will update our repository with any changes that may have happened on the remote repository down to our local repository. So just to make sure that we are up-to-date, do pull operation before doing any pushes.
+
+4- Git Push Operation stores the data permanently to the git remote repository after a successful git push operation, every contributor or developer can see your changes.
+Fetching imports commit to local branches whereas pushing exports commits to remote branches.
+   push command is git push origin master
+   Git push command will push any commits from the local repository to the remote repository by reference name with the branch you wanted to push.

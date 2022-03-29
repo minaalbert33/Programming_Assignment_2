@@ -1,0 +1,9 @@
+1- make a function that convert the char to its equivalent in morse code.
+2- make a function that convert the morse code to its equivalent char.
+3- get the input form the user 1 for cipher , 2 for decipher and 3 for exit.
+4- if the user entered 1 then get the message he want to cipher and make an empty string 
+   	(you will add the ciphered message to it later)
+4.1- loop on the string and pass every char to the (1) function and add it to the empty string u made before and add space after every addition.
+5- if the user entered 2 then get the message he want to decipher and make an empty string (you will add the deciphered message to it later)  
+5.1- loop on the string pass every substring to the (2) function and add it to the empty string.
+6- output the string

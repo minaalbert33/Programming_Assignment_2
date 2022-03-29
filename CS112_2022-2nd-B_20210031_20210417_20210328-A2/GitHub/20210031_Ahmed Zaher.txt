@@ -1,0 +1,15 @@
+Initialize
+to do that, we use the command git init
+
+Git status
+to do that, we use the command git status to list all edited files
+
+Add
+This git add -name command prepare file to staging are
+
+Commit
+git commit -m "message"is using to give comment to your next push
+
+Push
+git push <remote> 
+Is using to push file from local repo to remote repo
