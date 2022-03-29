@@ -1,0 +1,34 @@
+separateLine function
+    which is responsible to create line of (-)
+    to give appreance to output
+    and it's inLine because we gonnna call it much
+
+isValidOperator function
+	to check if the operator is valid or not.
+	by checking if operator equal either *, -, +, /
+
+isValidCompelxNumber function
+	it is created with help of regex library
+	to check if given string is valid to be complex number or no
+
+
+parse_complex function
+	This one to seprate string into two strings (real, imaginary)
+	and we used find to find opreator
+	then we used substr to divide string into two strings
+
+calc function
+	this take op as char and two strings by reference
+	then check which arithemtic opreator is
+	then by help of complex library
+	it calculate the result
+	then print result attached with showpos to print + or - as sign
+	
+The main function
+	print instruction to the user to enter valid input
+	then get input and check valid or no
+	and get required opreator
+	and while first or second number is not valid
+	we ask user to enter input again
+	and print result
+	
