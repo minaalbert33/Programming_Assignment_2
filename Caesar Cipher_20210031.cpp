@@ -1,9 +1,13 @@
-/* Author : Ahmed Zaher
- * Course : CS 112
- * Instructor: Dr. Mohammad El-Ramly
- * Assignment : Assignment 2 – Version 5.0
- * 
- * */
+// FCAI – Programming 1 – 2022 - Assignment 2
+// Program Name: Caesar Cipher_20210031.cpp
+// Program Description: 
+	//It is a type of
+	//substitution cipher in which each letter in the plaintext is replaced by a letter at some fixed number
+	//of positions down the alphabet
+// Last Modification Date: 23/03/2022
+// Author1 and ID and Group: 20210031 	Group :B
+// Teaching Assistant: Dr. Mohammad El-Ramly
+// Purpose: To solve cipher problem
 
 #include <iostream>
 using namespace std;
